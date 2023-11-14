@@ -1,0 +1,11 @@
+@import 'src/assets/_variables.scss';
+
+.header {
+    width: calc(100% - $primary-padding * 2);
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+}

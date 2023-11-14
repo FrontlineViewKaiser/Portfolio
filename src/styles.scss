@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'src/assets/_variables.scss';
+
+body {
+    margin: 0;
+}
+
+.creamColor {
+    background-color: #FFFCF3;
+}
+
+.globalPadding {
+    padding: 0 $primary-padding;
+}
+
+
