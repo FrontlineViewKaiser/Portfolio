@@ -1,0 +1,19 @@
+<div class="project globalPadding" [ngClass]="index % 2 === 0 ? 'row' : 'row-reverse'">
+    <div class="projectPicture">
+        <img class="thumbnail" src="{{projects[index]['img']}}" alt="">
+        <div [ngClass]="index % 2 === 0 ? 'frameLeft' : 'frameRight'" class="fadingIn"></div>
+        <img [ngClass]="index % 2 === 0 ? 'arrowButtonLeft' : 'arrowButtonRight'" class="fadingIn" src="/assets/img/Group 8.svg" alt="">
+    </div>
+    <div class="projectText" >
+        <div>
+            0{{index + 1}}/0{{projects.length}}
+        </div>
+        <div class="projectDescription">
+            <h2>{{projects[index]['title']}}</h2>
+            <div></div>
+            <span>{{projects[index]['description']}}</span>
+            <button>Check it out</button>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,66 @@
+@import "src/assets/_variables.scss";
+
+.introduction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: calc(100% - $primary-padding * 2);
+  height: 100vh;
+}
+
+.headline {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h1 {
+    max-width: 600px;
+    font-weight: 800;
+    font-size: 128px;
+    text-align: center;
+    margin: 0;
+    line-height: 0.9;
+  }
+}
+
+.underscore {
+  display: flex;
+  justify-content: center;
+  max-width: 600px;
+  width: 60%;
+
+  img {
+    width: 60%;
+  }
+  p {
+    color: #5988ff;
+    font-size: 48px;
+    white-space: nowrap;
+  }
+}
+
+.headlineLower {
+  margin-top: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    transform: rotate(-90deg);
+    transform-origin: bottom left;
+    font-weight: 300;
+    font-size: 23px;
+  }
+}
+
+.scrollDown {
+  p {
+    font-weight: 300;
+    font-size: 23px;
+    max-width: 90px;
+  }
+}
