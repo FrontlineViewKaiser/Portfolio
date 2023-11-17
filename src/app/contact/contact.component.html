@@ -1,0 +1,63 @@
+<div class="contact">
+    <div class="sayHi">
+        <h2>Say Hi!</h2>
+    </div>
+    <div class="contactForm">
+        <form action="">
+            <h2>Want to discuss a new Project?</h2>
+            <h3>Say Hello! Lets discuss your ideas and make them happen</h3>
+            <div class="wrapper">
+                <input class="inputs" type="text" placeholder="Your Name">
+                <img [class.display]="errorName()" class="symbol" src="/assets/img/Vector (1).svg" alt="">
+            </div>
+            <div [class.display]="errorName()" class="error">Please Fill out this field</div>
+            <div class="wrapper">
+                <input  class="inputs" type="text" placeholder="Your email">
+                <img [class.display]="errorMail()" class="symbol" src="/assets/img/Vector (1).svg" alt="">
+            </div>
+
+            <div [class.display]="errorMail()" class="error">Please Fill out this field with a valid email adress</div>
+            <div class="wrapper">
+                <textarea class="inputs" cols="56" rows="10" placeholder="Your message"></textarea>
+                <img [class.display]="errorMessage()" class="symbol" src="/assets/img/Vector (1).svg" alt="">
+            </div>
+
+            <div [class.display]="errorMessage()" class="error">Please Fill out this field</div>
+            <div class="privPolicy">
+                <img src="/assets/img/check_box_outline_blank.svg" alt="">
+                <p>I have read the <a href="">privacy policy</a> and agree to its terms</p>
+            </div>
+            <div [class.display]="errorPolicy()" class="error">Please agree to my privacy policy</div>
+            <button [disabled]="disabled" [class.greyed]="disabled">Send Message</button>
+        </form>
+
+
+
+    </div>
+    <div class="bottom">
+        <div class="logo">
+            <img src="/assets/img/logoJK.svg" alt="">
+            <div class="signature">
+                <img src="/assets/img/copyright.svg" alt="">
+                <p>Jonas Kratzenberg 2022</p>
+            </div>
+        </div>
+        <div class="links">
+            <a class="up" href="">
+                <img src="/assets/img/Group 7.svg" alt="">
+            </a>
+            <div class="social">
+                <a href="">
+                    <img src="/assets/img/Github button s3.svg" alt="">
+                </a>
+                <a href="">
+                    <img src="/assets/img/Email button s3.svg" alt="">
+                </a>
+                <a href="">
+                    <img src="/assets/img/Linkedin button s3.svg" alt="">
+                </a>
+            </div>
+            <a class="legal" href="">Legal Notice</a>
+        </div>
+    </div>
+</div>
