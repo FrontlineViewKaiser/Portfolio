@@ -3,6 +3,7 @@
 body {
     margin: 0;
     background-color: #FFFCF3;
+    font-family: 'Syne';
 }
 
 .creamColor {
@@ -12,5 +13,23 @@ body {
 .globalPadding {
     padding: 0 $primary-padding;
 }
+
+@font-face {
+    font-family: 'Overpass';
+    src: url(/assets/fonts/Overpass-Italic-VariableFont_wght.ttf);
+  }
+  
+  @font-face {
+    font-family: 'Overpass';
+    src: url(/assets/fonts/Overpass-VariableFont_wght.ttf);
+  }
+  
+  @font-face {
+    font-family: 'Syne';
+    src: url(/assets/fonts/Syne-VariableFont_wght.ttf);
+  }
+  
+
+
 
 

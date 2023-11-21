@@ -13,25 +13,29 @@ export class PortfolioComponent {
       'Join',
       'Kanban-inspired task-management system. Create, assign and edit tasks. With dynamic contacts and drag-drop function on computer and mobile',
       ['JS', 'CSS', 'HTML', 'API'],
-      '/assets/img/kaiser.jpg'
+      '/assets/img/kaiser.jpg',
+      'https://github.com/FrontlineViewKaiser/ringoffire'
     ),
     new ProjectClass(
       'Join',
       'Kanban-inspired task-management system. Create, assign and edit tasks. With dynamic contacts and drag-drop function on computer and mobile',
       ['JS', 'CSS', 'HTML', 'API'],
-      '/assets/img/kaiser.jpg'
+      '/assets/img/kaiser.jpg',
+      'https://github.com/FrontlineViewKaiser/ringoffire'
     ),
     new ProjectClass(
       'Join',
       'Kanban-inspired task-management system. Create, assign and edit tasks. With dynamic contacts and drag-drop function on computer and mobile',
       ['JS', 'CSS', 'HTML', 'API'],
-      '/assets/img/kaiser.jpg'
+      '/assets/img/kaiser.jpg',
+      'https://github.com/FrontlineViewKaiser/ringoffire'
     ),
     new ProjectClass(
       'Join',
       'Kanban-inspired task-management system. Create, assign and edit tasks. With dynamic contacts and drag-drop function on computer and mobile',
       ['JS', 'CSS', 'HTML', 'API'],
-      '/assets/img/kaiser.jpg'
+      '/assets/img/kaiser.jpg',
+      'https://github.com/FrontlineViewKaiser/ringoffire'
     ),
   ]
 

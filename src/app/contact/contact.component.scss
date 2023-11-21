@@ -42,19 +42,18 @@ form {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 28px;
 
   h2 {
     color: #5988ff;
     font-weight: 700;
     font-size: 32px;
     text-align: center;
-    margin: 0;
+    margin: 28px 0 0 0;
   }
 
   h3 {
     text-align: center;
-    margin: 0;
+    margin: 28px 0 0 0;
     font-weight: 400;
     font-size: 23px;
   }
@@ -67,6 +66,15 @@ form {
     border-radius: 0;
     border: none;
     border-bottom: solid 2px white;
+    resize: none;
+    font-family: Overpass;
+
+    &::placeholder {
+      color: white;
+      font-weight: 400;
+      font-size: 16px;
+      font-family: Overpass;
+    }
 
     &:focus-visible {
       border: solid 3px white;
@@ -82,20 +90,25 @@ form {
     gap: 16px;
     font-size: 14px;
     font-weight: 400;
+    height: fit-content;
+    margin: 28px 0 0 0;
+    font-family: Overpass;
 
     img {
-        cursor: pointer;
+      cursor: pointer;
+      width: 22px;
+      height: 22px;
     }
 
     p {
       margin: 0;
 
       a {
-        color: #5988FF;
+        color: #5988ff;
         text-decoration: none;
 
         &hover {
-            font-weight: 700;
+          font-weight: 700;
         }
       }
     }
@@ -109,16 +122,17 @@ form {
     font-weight: 400;
     font-size: 23px;
     cursor: pointer;
+    margin: 28px 0 0 0;
   }
 
   .error {
-    display: none;
     color: rgb(189, 0, 0);
     font-size: 16px;
     font-weight: 400;
+    margin-top: 4px;
+    width: 100%;
   }
 }
-
 
 .bottom {
   margin-top: 24px;
@@ -129,11 +143,25 @@ form {
   padding-bottom: 64px;
 }
 
+.logo {
+  .logoContainer {
+    position: relative;
+    height: 80px;
+    width: fit-content;
+    display: flex;
+    img {
+      height: 80px;
+      position: absolute;
+      left: -20px;
+    }
+  }
+}
 
 .signature {
   display: flex;
   gap: 16px;
   margin-bottom: 47px;
+  font-family: Overpass;
 
   img {
     width: 20px;
@@ -143,7 +171,6 @@ form {
   p {
     margin: 0;
   }
-
 }
 
 .links {
@@ -153,12 +180,15 @@ form {
   justify-content: flex-end;
   width: 25%;
 
-  .up{
+  .up {
     margin-bottom: 40px;
   }
-   .legal {
+  .legal {
     margin-top: 24px;
-   }
+    text-decoration: none;
+    color: white;
+    font-family: Overpass;
+  }
 }
 
 .social {
@@ -167,35 +197,26 @@ form {
   width: 100%;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 .wrapper {
-    width: 100%;
-    position: relative;
+  width: 100%;
+  position: relative;
+  margin-top: 28px;
+}
+
+.bars {
+  position: absolute;
+  bottom: 8px;
+  right: 1px;
 }
 
 .symbol {
-    position: absolute;
-    top: 12px;
-    right: 12px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
 }
 
 .greyed {
-    border: solid 4px rgb(94, 94, 94) !important;
-    color:rgb(94, 94, 94) !important; 
-    cursor: auto !important;
+  border: solid 4px rgb(94, 94, 94) !important;
+  color: rgb(94, 94, 94) !important;
+  cursor: auto !important;
 }
-
-.display {
-    display: block;
-  }

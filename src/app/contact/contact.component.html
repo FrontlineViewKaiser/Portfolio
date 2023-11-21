@@ -3,32 +3,47 @@
         <h2>Say Hi!</h2>
     </div>
     <div class="contactForm">
-        <form action="">
+        <form [formGroup]="contactForm" (ngSubmit)="sendMail()">
             <h2>Want to discuss a new Project?</h2>
             <h3>Say Hello! Lets discuss your ideas and make them happen</h3>
             <div class="wrapper">
-                <input class="inputs" type="text" placeholder="Your Name">
-                <img [class.display]="errorName()" class="symbol" src="/assets/img/Vector (1).svg" alt="">
+
+                <input class="inputs" type="text" placeholder="Your Name" formControlName="name">
+                <img *ngIf="contactForm.get('name').invalid && (contactForm.get('name').dirty || contactForm.get('name').touched)" class="symbol"
+                    src="/assets/img/Vector (1).svg" alt="">
             </div>
-            <div [class.display]="errorName()" class="error">Please Fill out this field</div>
+            <div *ngIf="contactForm.get('name').invalid && (contactForm.get('name').dirty || contactForm.get('name').touched)" class="error">
+                Please Fill out this field</div>
+
             <div class="wrapper">
-                <input  class="inputs" type="text" placeholder="Your email">
-                <img [class.display]="errorMail()" class="symbol" src="/assets/img/Vector (1).svg" alt="">
+
+                <input class="inputs" type="text" placeholder="Your Email" name="email" formControlName="email">
+                <img *ngIf="contactForm.get('email').invalid && (contactForm.get('email').dirty || contactForm.get('email').touched)"
+                    class="symbol" src="/assets/img/Vector (1).svg" alt="">
+            </div>
+            <div *ngIf="contactForm.get('email').invalid && (contactForm.get('email').dirty || contactForm.get('email').touched)" class="error">Please Fill out this field with a valid email adress</div>
+            <div class="wrapper">
+
+                <textarea class="inputs" cols="56" rows="10" placeholder="Your Message" name="message"
+                formControlName="message"></textarea>
+                <img *ngIf="contactForm.get('message').invalid && (contactForm.get('message').dirty || contactForm.get('message').touched)"
+                    class="symbol" src="/assets/img/Vector (1).svg" alt="">
+                <img class="bars" src="/assets/img/Frame.svg" alt="">
+
             </div>
 
-            <div [class.display]="errorMail()" class="error">Please Fill out this field with a valid email adress</div>
-            <div class="wrapper">
-                <textarea class="inputs" cols="56" rows="10" placeholder="Your message"></textarea>
-                <img [class.display]="errorMessage()" class="symbol" src="/assets/img/Vector (1).svg" alt="">
-            </div>
-
-            <div [class.display]="errorMessage()" class="error">Please Fill out this field</div>
+            <div *ngIf="contactForm.get('message').invalid && (contactForm.get('message').dirty || contactForm.get('message').touched)"
+                class="error">Please Fill out this field</div>
             <div class="privPolicy">
-                <img src="/assets/img/check_box_outline_blank.svg" alt="">
+                <img (click)="policy = !policy"
+                    [src]="policy ? '/assets/img/78. Check button.svg'  : '/assets/img/check_box_outline_blank.svg'"
+                    [style.height]="policy ? '24px' : '18px'" [style.width]="policy ? '24px' : '18px'" alt="">
                 <p>I have read the <a href="">privacy policy</a> and agree to its terms</p>
+
             </div>
-            <div [class.display]="errorPolicy()" class="error">Please agree to my privacy policy</div>
-            <button [disabled]="disabled" [class.greyed]="disabled">Send Message</button>
+            <div *ngIf="!policy && (contactForm.get('message').touched || contactForm.get('message').touched || contactForm.get('email').touched)" class="error">Please agree to my privacy policy</div>
+            <button type="submit" [disabled]="!contactForm.valid" [class.greyed]="!contactForm.valid">Send
+                Message</button>
         </form>
 
 
@@ -36,14 +51,17 @@
     </div>
     <div class="bottom">
         <div class="logo">
-            <img src="/assets/img/logoJK.svg" alt="">
+            <a class="logoContainer" href="/">
+                <img src="/assets/img/logoJK.svg" alt="">
+            </a>
+
             <div class="signature">
                 <img src="/assets/img/copyright.svg" alt="">
                 <p>Jonas Kratzenberg 2022</p>
             </div>
         </div>
         <div class="links">
-            <a class="up" href="">
+            <a (click)="scrollToTop()" class="up" href="/">
                 <img src="/assets/img/Group 7.svg" alt="">
             </a>
             <div class="social">
