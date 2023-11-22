@@ -8,9 +8,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ContactComponent implements OnInit {
   contactForm: FormGroup<{
-    name: FormControl<string>;
-    email: FormControl<string>;
-    message: FormControl<string>;
+    name: FormControl<string>,
+    email: FormControl<string>,
+    message: FormControl<string>,
     policy: FormControl<boolean>;
   }>;
   disabled: boolean = true;
@@ -26,7 +26,24 @@ export class ContactComponent implements OnInit {
     });
   }
 
-  sendMail() {
+  togglePolicy() {
+    let currentValue = this.contactForm.get('policy').value
+    this.contactForm.get('policy').setValue(!currentValue)
+  }
+
+  async sendMail() {
+    console.log('email sent')
+
+    let data = new FormData()
+    data.append('name', this.contactForm.get('name').value)
+    data.append('message' ,this.contactForm.get('message').value)
+    await fetch('http://jonas-kratzenberg.developerakademie.net/send_mail/send_mail.php', 
+    {
+      method: 'POST',
+      body: data
+
+    })
+
     //jonas-kratzenberg.developerakademie.net/send_mail/send_mail.php
   }
 

@@ -13,6 +13,7 @@ import { ProjectComponent } from './project/project.component';
 import { ContactComponent } from './contact/contact.component';
 import { LegalComponent } from './legal/legal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PrivacyComponent } from './privacy/privacy.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PortfolioComponent,
     ProjectComponent,
     ContactComponent,
-    LegalComponent
+    LegalComponent,
+    PrivacyComponent
   ],
   imports: [
     BrowserModule,

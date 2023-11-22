@@ -2,32 +2,37 @@
     <div class="sayHi">
         <h2>Say Hi!</h2>
     </div>
-    <div class="contactForm" >
+    <div class="contactForm">
         <form [formGroup]="contactForm" (ngSubmit)="sendMail()">
             <h2>Want to discuss a new Project?</h2>
             <h3>Say Hello! Lets discuss your ideas and make them happen</h3>
             <div class="wrapper">
 
                 <input class="inputs" type="text" placeholder="Your Name" formControlName="name">
-                <img *ngIf="contactForm.get('name').invalid && (contactForm.get('name').dirty || contactForm.get('name').touched)" class="symbol"
-                    src="/assets/img/Vector (1).svg" alt="">
+                <img *ngIf="contactForm.get('name').valid || contactForm.get('name').invalid && (contactForm.get('name').dirty || contactForm.get('name').touched) "
+                    class="symbol"
+                    [src]="contactForm.get('name').valid ? '/assets/img/Frame (1).svg': '/assets/img/Vector (1).svg'">
             </div>
-            <div *ngIf="contactForm.get('name').invalid && (contactForm.get('name').dirty || contactForm.get('name').touched)" class="error">
+            <div *ngIf="contactForm.get('name').invalid && (contactForm.get('name').dirty || contactForm.get('name').touched)"
+                class="error">
                 Please Fill out this field</div>
 
             <div class="wrapper">
 
                 <input class="inputs" type="text" placeholder="Your Email" name="email" formControlName="email">
-                <img *ngIf="contactForm.get('email').invalid && (contactForm.get('email').dirty || contactForm.get('email').touched)"
-                    class="symbol" src="/assets/img/Vector (1).svg" alt="">
+                <img *ngIf="contactForm.get('email').valid || contactForm.get('email').invalid && (contactForm.get('email').dirty || contactForm.get('email').touched) "
+                    class="symbol"
+                    [src]="contactForm.get('email').valid ? '/assets/img/Frame (1).svg': '/assets/img/Vector (1).svg'">
             </div>
-            <div *ngIf="contactForm.get('email').invalid && (contactForm.get('email').dirty || contactForm.get('email').touched)" class="error">Please Fill out this field with a valid email adress</div>
+            <div *ngIf="contactForm.get('email').invalid && (contactForm.get('email').dirty || contactForm.get('email').touched)"
+                class="error">Please Fill out this field with a valid email adress</div>
             <div class="wrapper">
 
                 <textarea class="inputs" cols="56" rows="10" placeholder="Your Message" name="message"
-                formControlName="message"></textarea>
-                <img *ngIf="contactForm.get('message').invalid && (contactForm.get('message').dirty || contactForm.get('message').touched)"
-                    class="symbol" src="/assets/img/Vector (1).svg" alt="">
+                    formControlName="message"></textarea>
+                <img *ngIf="contactForm.get('message').valid || contactForm.get('message').invalid && (contactForm.get('message').dirty || contactForm.get('message').touched) "
+                    class="symbol"
+                    [src]="contactForm.get('message').valid ? '/assets/img/Frame (1).svg': '/assets/img/Vector (1).svg'">
                 <img class="bars" src="/assets/img/Frame.svg" alt="">
 
             </div>
@@ -35,15 +40,19 @@
             <div *ngIf="contactForm.get('message').invalid && (contactForm.get('message').dirty || contactForm.get('message').touched)"
                 class="error">Please Fill out this field</div>
             <div class="privPolicy">
-                <img (click)="policy = !policy"
-                    [src]="policy ? '/assets/img/78. Check button.svg'  : '/assets/img/check_box_outline_blank.svg'"
-                    [style.height]="policy ? '24px' : '18px'" [style.width]="policy ? '24px' : '18px'" alt="">
-                <p>I have read the <a href="">privacy policy</a> and agree to its terms</p>
+                <div class="policyWrapper">
+                    <img type="checkbox" (click)="togglePolicy()"
+                        [src]="contactForm.get('policy').value ? '/assets/img/78. Check button.svg' : '/assets/img/check_box_outline_blank.svg'"
+                        alt="">
+                </div>
+
+                <p>I have read the <a href="/privacyPolicy">privacy policy</a> and agree to its terms</p>
 
             </div>
-            <div *ngIf="!policy && (contactForm.get('message').touched || contactForm.get('message').touched || contactForm.get('email').touched)" class="error">Please agree to my privacy policy</div>
-            <button type="submit" [disabled]="!contactForm.valid" [class.greyed]="!contactForm.valid">Send
-                Message</button>
+            <div *ngIf="!contactForm.get('policy').value && (contactForm.get('message').touched || contactForm.get('message').touched || contactForm.get('email').touched)"
+                class="error">Please agree to my privacy policy</div>
+            <button type="submit" [disabled]="!contactForm.valid" [class.greyed]="!contactForm.valid">
+                Send Message</button>
         </form>
 
 
@@ -61,7 +70,7 @@
             </div>
         </div>
         <div class="links">
-            <a  (click)="scrollToTop()" class="up" href="/">
+            <a (click)="scrollToTop()" class="up" href="/">
                 <img class="jumpAnimation" src="/assets/img/Group 7.svg" alt="">
             </a>
             <div class="social">
@@ -75,7 +84,10 @@
                     <img src="/assets/img/Linkedin button s3.svg" alt="">
                 </a>
             </div>
-            <a class="legal" href="">Legal Notice</a>
+            <a class="legal" href="/legal">
+                Legal Notice
+                <img src="/assets/img/Vector 1.svg" alt="">
+            </a>
         </div>
     </div>
 </div>

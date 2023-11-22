@@ -2,11 +2,12 @@
 
 .skillsSection {
   width: calc(100% - $primary-padding * 2);
-  margin: 80px 0;
+  margin: 180px 0;
 }
 
 .skillsContainer {
   position: relative;
+  margin: 0 0 120px 0;
 }
 
 .skills {
@@ -16,10 +17,10 @@
   align-items: center;
   border: solid 4px black;
   padding: 65px 5% 5% 5%;
-  gap: 14%;
+  gap: 12%;
 
   div {
-    width: 66px;
+    width: 92px;
     overflow: hidden;
 
     &:hover {
@@ -29,9 +30,7 @@
 
       img {
         animation: horsin-around 1.1s ease-in-out;
-        
       }
-
     }
   }
 
@@ -66,9 +65,8 @@
     transition: color 0.5s ease;
 
     &:hover {
-      color: #5988FF;
+      color: #5988ff;
     }
-  
   }
 }
 
@@ -80,19 +78,25 @@
 
   img {
     position: absolute;
+    height: 80%;
     left: 10%;
     top: 4%;
+    rotate: -45deg;
+
+    &:hover {
+      transform: translateY(45%);
+      transition: 500ms ease;
+    }
   }
 }
 
 
 @keyframes horsin-around {
- 20% {
+  20% {
     transform: translateX(40%);
   }
   40% {
-    transform: translateX(50%) scale(0.9) ;
-
+    transform: translateX(50%) scale(0.9);
   }
   60% {
     transform: translateX(-50%) scale(0.9);
@@ -101,6 +105,6 @@
     transform: translateX(-40%);
   }
   100% {
-    transform: translateX(0)
+    transform: translateX(0);
   }
 }

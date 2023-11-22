@@ -25,7 +25,7 @@
     transition: color 0.5s ease;
 
     &:hover {
-      color: #5988FF;
+      color: #5988ff;
     }
   }
 }
@@ -100,12 +100,6 @@ form {
     margin: 28px 0 0 0;
     font-family: Overpass;
 
-    img {
-      cursor: pointer;
-      width: 22px;
-      height: 22px;
-    }
-
     p {
       margin: 0;
 
@@ -120,6 +114,26 @@ form {
     }
   }
 
+  .policyWrapper {
+    border-radius: 50%;
+    transition: color 0.5s ease;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: #5988ff;
+    }
+
+    img {
+      cursor: pointer;
+      width: 22px;
+      height: 22px;
+    }
+  }
+
   button {
     border: solid 4px white;
     color: white;
@@ -129,6 +143,11 @@ form {
     font-size: 23px;
     cursor: pointer;
     margin: 28px 0 0 0;
+
+    &:hover {
+      transform: scaleX(1.1);
+      transition: 500ms ease;
+    }
   }
 
   .error {
@@ -194,6 +213,23 @@ form {
     text-decoration: none;
     color: white;
     font-family: Overpass;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    overflow: hidden;
+
+    img {
+      width: 70%;
+      transform: translateX(-200%);
+      transition: 250ms ease;
+    }
+
+    &:hover {
+      img {
+        transform: translateX(0);
+      }
+    }
   }
 }
 
@@ -228,12 +264,10 @@ form {
 }
 
 .jumpAnimation {
-
   &:hover {
     animation: jump 1s ease;
   }
 }
-
 
 @keyframes jump {
   0% {
