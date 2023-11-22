@@ -17,11 +17,12 @@
   align-items: flex-end;
   justify-content: flex-start;
 
-  h2 {
+  a {
     font-size: 78px;
     font-weight: 800;
     margin: 0;
-
+    color: white;
+    text-decoration: none;
     transition: color 0.5s ease;
 
     &:hover {
@@ -226,6 +227,7 @@ form {
     }
 
     &:hover {
+      font-weight: 700;
       img {
         transform: translateX(0);
       }

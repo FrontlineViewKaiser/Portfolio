@@ -16,9 +16,9 @@ export class BodyComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {}
 
-  displayMenu() {}
 
-  hideMenu() {
-    this.menuService.MenuGlobal = !this.menuService.MenuGlobal
-  }
+
+
+    
+
 }

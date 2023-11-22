@@ -18,6 +18,11 @@
     .logo {
       height: 80px;
       animation: logo 1.5s;
+
+      &:hover {
+        transform: scale(1.1);
+        transition: 250ms ease;
+      }
     }
   }
 
@@ -28,6 +33,11 @@
     background-size: contain;
     width: 40px;
     height: 32px;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: 250ms ease;
+    }
   }
 }
 
@@ -82,5 +92,11 @@
   }
   to {
     transform: scale(1);
+  }
+}
+
+@media(max-width: 540px) {
+  .header {
+    width: calc(100% - $secondary-padding * 2); 
   }
 }

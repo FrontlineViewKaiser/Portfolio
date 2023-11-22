@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { MenuService } from '../menu.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -9,9 +10,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ContactComponent implements OnInit {
 
-  constructor(public menuService: MenuService) {}
+  constructor(public menuService: MenuService, public router: Router, public route: ActivatedRoute) {}
 
-
+  currentRoute;
 
   contactForm: FormGroup<{
     name: FormControl<string>,
@@ -24,6 +25,7 @@ export class ContactComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.currentRoute = this.route.snapshot.url.join('/')
     this.contactForm = new FormGroup({
       name: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -43,6 +45,7 @@ export class ContactComponent implements OnInit {
     let data = new FormData()
     data.append('name', this.contactForm.get('name').value)
     data.append('message' ,this.contactForm.get('message').value)
+    data.append('email' ,this.contactForm.get('email').value)
 
     fetch("https://formspree.io/f/xqkvorkj", {
         method: "POST",
@@ -51,7 +54,7 @@ export class ContactComponent implements OnInit {
             'Accept': 'application/json'
         }
     }).then(() => {
-        window.location.href = "/";
+        window.location.href = "/success";
     }).catch((error) => {
         console.log(error);
     });

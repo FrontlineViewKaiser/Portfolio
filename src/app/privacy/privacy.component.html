@@ -2,7 +2,7 @@
 
 <app-atf></app-atf>
 
-<div>
+<div *ngIf="!this.menuService.MenuGlobal">
 
 
 
@@ -96,3 +96,6 @@
 
 </div>
 
+<app-burger-menu *ngIf="this.menuService.MenuGlobal"></app-burger-menu>
+
+<app-contact></app-contact>

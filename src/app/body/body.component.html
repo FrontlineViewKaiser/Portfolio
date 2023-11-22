@@ -4,25 +4,7 @@
 <app-skills *ngIf="!this.menuService.MenuGlobal"></app-skills>
 <app-portfolio *ngIf="!this.menuService.MenuGlobal" class="portfolio"></app-portfolio>
 
+<app-burger-menu *ngIf="this.menuService.MenuGlobal"></app-burger-menu>
 
-
-<section *ngIf="this.menuService.MenuGlobal" class="burgerMenu">
-    <a (click)="hideMenu()" href="#aboutMe">
-        <img src="/assets/img/Rectangle 7.svg" alt="">
-        <div class="bar"></div>
-        <h1>About Me</h1>
-    </a>
-    <a (click)="hideMenu()" href="#skills">
-        <img src="/assets/img/Rectangle 7.svg" alt="">
-        <div class="bar"></div>
-        <h1>My Skills</h1>
-    </a>
-    <a (click)="hideMenu()" href="#portfolio">
-        <img src="/assets/img/Rectangle 7.svg" alt="">
-        <div class="bar"></div>
-        <h1>My Portfolio</h1>
-    </a>
-
-</section>
 
 <app-contact></app-contact>

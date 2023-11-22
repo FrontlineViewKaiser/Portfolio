@@ -1,8 +1,8 @@
 <div class="contact" id="contact">
     <div class="sayHi">
-        <h2>Say Hi!</h2>
+        <a href="#contact" (click)="this.menuService.MenuGlobal = false">Say Hi!</a>
     </div>
-    <div *ngIf="!this.menuService.MenuGlobal" class="contactForm">
+    <div *ngIf="!this.menuService.MenuGlobal && currentRoute !== 'success' && currentRoute !== 'privacyPolicy' && currentRoute !== 'legal'" class="contactForm">
         <form [formGroup]="contactForm" (ngSubmit)="sendMail()">
             <h2>Want to discuss a new Project?</h2>
             <h3>Say Hello! Lets discuss your ideas and make them happen</h3>
@@ -59,8 +59,8 @@
 
     </div>
     <div class="bottom">
-        <div class="mailAdress" *ngIf="this.menuService.MenuGlobal" >jonas.Kratzenberg@web.de</div>
-        <div *ngIf="!this.menuService.MenuGlobal" class="logo">
+        <div class="mailAdress" *ngIf="this.menuService.MenuGlobal || currentRoute == 'success' || currentRoute == 'privacyPolicy' || currentRoute == 'legal'">jonas.Kratzenberg@web.de</div>
+        <div *ngIf="!this.menuService.MenuGlobal && currentRoute !== 'success' && currentRoute !== 'privacyPolicy' && currentRoute !== 'legal'" class="logo">
             <a class="logoContainer" href="/">
                 <img src="/assets/img/logoJK.svg" alt="">
             </a>
@@ -71,7 +71,7 @@
             </div>
         </div>
         <div class="links">
-            <a *ngIf="!this.menuService.MenuGlobal" (click)="scrollToTop()" class="up" href="/">
+            <a *ngIf="!this.menuService.MenuGlobal && currentRoute !== 'success' && currentRoute !== 'privacyPolicy' && currentRoute !== 'legal'" (click)="scrollToTop()" class="up" href="/">
                 <img class="jumpAnimation" src="/assets/img/Group 7.svg" alt="">
             </a>
             <div class="social">
@@ -85,7 +85,7 @@
                     <img src="/assets/img/Linkedin button s3.svg" alt="">
                 </a>
             </div>
-            <a *ngIf="!this.menuService.MenuGlobal" class="legal" href="/legal">
+            <a *ngIf="!this.menuService.MenuGlobal && currentRoute !== 'success' && currentRoute !== 'privacyPolicy' && currentRoute !== 'legal'" class="legal" href="/legal">
                 Legal Notice
                 <img src="/assets/img/Vector 1.svg" alt="">
             </a>

@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { MenuService } from '../menu.service';
 
 @Component({
-  selector: 'app-legal',
-  templateUrl: './legal.component.html',
-  styleUrls: ['./legal.component.scss']
+  selector: 'app-success',
+  templateUrl: './success.component.html',
+  styleUrls: ['./success.component.scss']
 })
-export class LegalComponent {
+export class SuccessComponent {
 
   constructor(public menuService: MenuService) {}
 

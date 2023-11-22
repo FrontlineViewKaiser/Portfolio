@@ -14,6 +14,8 @@ import { ContactComponent } from './contact/contact.component';
 import { LegalComponent } from './legal/legal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { SuccessComponent } from './success/success.component';
+import { BurgerMenuComponent } from './burger-menu/burger-menu.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { PrivacyComponent } from './privacy/privacy.component';
     ProjectComponent,
     ContactComponent,
     LegalComponent,
-    PrivacyComponent
+    PrivacyComponent,
+    SuccessComponent,
+    BurgerMenuComponent
   ],
   imports: [
     BrowserModule,
