@@ -7,16 +7,13 @@ import { MenuService } from '../menu.service';
   styleUrls: ['./atf.component.scss'],
 })
 export class ATFComponent implements OnInit {
-  public burgerMenu: boolean = false;
+  burgerMenu: boolean = false;
 
-  constructor(private menuService: MenuService) {
-
-  }
+  constructor(public menuService: MenuService) {}
 
   ngOnInit() {}
 
   toggleDisplayMenu() {
-    this.burgerMenu = !this.burgerMenu;
-    this.menuService.changeBurgerMenuState(this.burgerMenu)
+    this.menuService.MenuGlobal = !this.menuService.MenuGlobal
   }
 }

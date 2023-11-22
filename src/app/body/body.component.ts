@@ -2,44 +2,23 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MenuService } from '../menu.service';
 import { Subscription } from 'rxjs';
 
-
-
 @Component({
   selector: 'app-body',
   templateUrl: './body.component.html',
-  styleUrls: ['./body.component.scss']
+  styleUrls: ['./body.component.scss'],
 })
 export class BodyComponent implements OnInit, OnDestroy {
-  private burgerMenuSubscription: Subscription
-
-  constructor(private MenuService: MenuService) {}
 
 
-  ngOnInit(): void {
-    this.burgerMenuSubscription = this.MenuService.burgerMenuState.subscribe(state => {
-      if(state) {
-        this.displayMenu()
-      } else {
-        this.hideMenu()
-      }
-    })
-  }
+  constructor(public menuService: MenuService) {}
 
+  ngOnInit(): void {}
 
-  ngOnDestroy(): void {
-    this.burgerMenuSubscription.unsubscribe();
-  }
+  ngOnDestroy(): void {}
 
-  displayMenu() {
-
-  }
+  displayMenu() {}
 
   hideMenu() {
-
+    this.menuService.MenuGlobal = !this.menuService.MenuGlobal
   }
-
-
-
-
 }
-

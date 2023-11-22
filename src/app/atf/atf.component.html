@@ -2,5 +2,5 @@
     <a class="logoContainer" href="/">
         <img class="logo" src="/assets/img/logoJKBlack.svg" alt="">
     </a>
-    <div (click)="toggleDisplayMenu()" [class.burgerMenuOn]="burgerMenu" [class.burgerMenuOff]="!burgerMenu"></div>
+    <div (click)="toggleDisplayMenu()" [class.burgerMenuOn]="this.menuService.MenuGlobal" [class.burgerMenuOff]="!this.menuService.MenuGlobal"></div>
 </div>

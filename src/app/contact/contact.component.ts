@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { MenuService } from '../menu.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -7,6 +8,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent implements OnInit {
+
+  constructor(public menuService: MenuService) {}
+
+
+
   contactForm: FormGroup<{
     name: FormControl<string>,
     email: FormControl<string>,
@@ -37,12 +43,18 @@ export class ContactComponent implements OnInit {
     let data = new FormData()
     data.append('name', this.contactForm.get('name').value)
     data.append('message' ,this.contactForm.get('message').value)
-    await fetch('http://jonas-kratzenberg.developerakademie.net/send_mail/send_mail.php', 
-    {
-      method: 'POST',
-      body: data
 
-    })
+    fetch("https://formspree.io/f/xqkvorkj", {
+        method: "POST",
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(() => {
+        window.location.href = "/";
+    }).catch((error) => {
+        console.log(error);
+    });
 
     //jonas-kratzenberg.developerakademie.net/send_mail/send_mail.php
   }

@@ -5,13 +5,6 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class MenuService {
-  private burgerMenuSource = new BehaviorSubject<boolean>(false);
 
-  burgerMenuState = this.burgerMenuSource.asObservable()
-
-  changeBurgerMenuState(state: boolean) {
-    this.burgerMenuSource.next(state)
-  }
-
-  constructor() {}
+  MenuGlobal: boolean = false
 }
