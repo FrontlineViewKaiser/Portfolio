@@ -9,6 +9,11 @@
     font-weight: 800;
     font-size: 78px;
     line-height: 78px;
+    transition: color 0.5s ease;
+
+    &:hover {
+      color: #5988FF;
+    }
   }
 }
 
@@ -34,13 +39,19 @@
   gap: 52px;
   font-family: Overpass;
 
-  button {
+  a {
     border: solid 4px black;
-    width: 210px;
-    height: 65px;
+    padding: 20px 60px;
     background-color: #fffcf3;
     font-weight: 400;
     font-size: 23px;
+    transition: transform 0.5s ease;
+    text-decoration: none;
+    color: black;
+
+    &:hover {
+      transform: scaleX(1.2);
+    }
   }
 }
 

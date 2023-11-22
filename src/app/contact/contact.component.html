@@ -1,8 +1,8 @@
-<div class="contact">
+<div class="contact" id="contact">
     <div class="sayHi">
         <h2>Say Hi!</h2>
     </div>
-    <div class="contactForm">
+    <div class="contactForm" >
         <form [formGroup]="contactForm" (ngSubmit)="sendMail()">
             <h2>Want to discuss a new Project?</h2>
             <h3>Say Hello! Lets discuss your ideas and make them happen</h3>
@@ -61,17 +61,17 @@
             </div>
         </div>
         <div class="links">
-            <a (click)="scrollToTop()" class="up" href="/">
-                <img src="/assets/img/Group 7.svg" alt="">
+            <a  (click)="scrollToTop()" class="up" href="/">
+                <img class="jumpAnimation" src="/assets/img/Group 7.svg" alt="">
             </a>
             <div class="social">
-                <a href="">
+                <a class="jumpAnimation" href="">
                     <img src="/assets/img/Github button s3.svg" alt="">
                 </a>
-                <a href="">
+                <a class="jumpAnimation" href="">
                     <img src="/assets/img/Email button s3.svg" alt="">
                 </a>
-                <a href="">
+                <a class="jumpAnimation" href="">
                     <img src="/assets/img/Linkedin button s3.svg" alt="">
                 </a>
             </div>

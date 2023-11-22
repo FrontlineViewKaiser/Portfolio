@@ -17,7 +17,7 @@
   flex-direction: column;
 
   h1 {
-    max-width: 600px;
+    width: 100%;
     font-weight: 800;
     font-size: 128px;
     text-align: center;
@@ -29,8 +29,9 @@
 .underscore {
   display: flex;
   justify-content: center;
-  max-width: 600px;
-  width: 60%;
+  width: 85%;
+  margin-top: 16px;
+  height: 50px;
 
   img {
     width: 60%;
@@ -39,6 +40,8 @@
     color: #5988ff;
     font-size: 48px;
     white-space: nowrap;
+    font-family: Overpass;
+    margin: 0;
   }
 }
 
@@ -49,20 +52,61 @@
   justify-content: space-between;
   align-items: center;
 
-  span {
+  a {
     transform: rotate(-90deg);
     transform-origin: bottom left;
+    margin: 210px 0 0 55px;
     font-weight: 300;
     font-size: 23px;
     font-family: Overpass;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
   }
 }
 
 .scrollDown {
+  cursor: pointer;
+  
+
+  &:hover {
+    img {
+     
+      animation: arrow 1s infinite ease;
+    }
+  }
+
+  div {
+    overflow: hidden;
+  }
+
+  img {
+    transform: translateY(-95px);
+  }
+
   p {
     font-family: Overpass;
     font-weight: 300;
     font-size: 23px;
     max-width: 90px;
+  }
+}
+
+
+@keyframes arrow {
+  20% {
+    transform: translateY(-95px);
+  }
+  40% {
+    transform: translateY(-45px);
+  }
+  60% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(45px);
+  }
+  100% {
+    transform: translateY(95px);
   }
 }

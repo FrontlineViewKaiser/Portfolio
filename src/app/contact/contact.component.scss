@@ -21,6 +21,12 @@
     font-size: 78px;
     font-weight: 800;
     margin: 0;
+
+    transition: color 0.5s ease;
+
+    &:hover {
+      color: #5988FF;
+    }
   }
 }
 
@@ -178,7 +184,7 @@ form {
   align-items: flex-end;
   flex-direction: column;
   justify-content: flex-end;
-  width: 25%;
+  width: 20%;
 
   .up {
     margin-bottom: 40px;
@@ -219,4 +225,24 @@ form {
   border: solid 4px rgb(94, 94, 94) !important;
   color: rgb(94, 94, 94) !important;
   cursor: auto !important;
+}
+
+.jumpAnimation {
+
+  &:hover {
+    animation: jump 1s ease;
+  }
+}
+
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-35px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
