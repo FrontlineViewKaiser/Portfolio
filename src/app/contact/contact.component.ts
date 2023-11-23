@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { MenuService } from '../menu.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -10,7 +10,17 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ContactComponent implements OnInit {
 
-  constructor(public menuService: MenuService, public router: Router, public route: ActivatedRoute) {}
+  constructor(public menuService: MenuService, public router: Router, public route: ActivatedRoute) {
+    this.screenwidth = window.innerWidth;
+  }
+
+  screenwidth: any;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.screenwidth = window.innerWidth; // Update on window resize
+  }
+
 
   currentRoute;
 

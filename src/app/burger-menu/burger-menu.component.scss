@@ -1,5 +1,10 @@
+@import "src/assets/_variables.scss";
+
+
+
+
 .burgerMenu {
-    width: 100%;
+    padding: 0 $primary-padding;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -81,3 +86,28 @@
     }
   }
   
+
+
+
+  
+  @media (max-width: 952px) {
+    h1 {
+      font-size: 70px !important;
+    }
+  }
+
+  @media (max-width: 780px) {
+    h1 {
+      font-size: 44px !important;
+    }
+  }
+
+  @media (max-width: 610px) {
+    .burgerMenu {
+      padding: 0 $secondary-padding;
+    }
+
+    h1 {
+      font-size: 25px !important;
+    }
+  }
