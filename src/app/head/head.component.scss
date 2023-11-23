@@ -166,6 +166,10 @@
     font-size: 32px !important;
   }
 
+    .introduction {
+    width: calc(100% - $secondary-padding * 2); 
+  }
+
   .underscore {
     margin: 0;
   img {
@@ -174,12 +178,6 @@
   p {
     font-size: 20px;
   }
-  }
-}
-
-@media(max-width: 610px) {
-  .introduction {
-    width: calc(100% - $secondary-padding * 2); 
   }
 }
 

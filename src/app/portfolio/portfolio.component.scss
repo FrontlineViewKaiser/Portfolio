@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100%;
+  width: calc(100% - $primary-padding * 2);
   margin-bottom: 64px;
 }
 
@@ -16,15 +16,22 @@ h2 {
   transition: color 0.5s ease;
 
   &:hover {
-    color: #5988FF;
+    color: #5988ff;
   }
-
 }
 
 span {
   font-size: 23px;
   font-weight: 400;
   font-family: Overpass;
+}
+
+.projectList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .arrowLeft {
@@ -44,5 +51,34 @@ span {
       transform: translateY(45%);
       transition: 500ms ease;
     }
+  }
+}
+
+@media (max-width: 745px) {
+  h2 {
+    font-size: 58px;
+  }
+
+  span {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 610px) {
+  .head {
+    width: calc(100% - $secondary-padding * 2);
+  }
+}
+
+@media (max-width: 540px) {
+  .head {
+    width: calc(100% - $secondary-padding * 2);
+  }
+
+  .projectList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 }

@@ -2,20 +2,28 @@
     <div class="projectPicture">
         <img class="thumbnail" src="{{projects[index]['img']}}" alt="">
         <div [ngClass]="index % 2 === 0 ? 'frameLeft' : 'frameRight'" class="fadingIn"></div>
-        <img [ngClass]="index % 2 === 0 ? 'arrowButtonLeft' : 'arrowButtonRight'" class="fadingIn" src="/assets/img/Group 8.svg" alt="">
+        <img [ngClass]="index % 2 === 0 ? 'arrowButtonLeft' : 'arrowButtonRight'" class="fadingIn"
+            src="/assets/img/Group 8.svg" alt="">
     </div>
-    <div class="projectText" [ngClass]="index % 2 === 0 ? 'left' : 'right'">
+    <div class="textside" [ngClass]="index % 2 === 0 ? 'left' : 'right'">
         <div class="number">
             0{{index + 1}}/0{{projects.length}}
         </div>
-        <div class="projectDescription">
-            <h2>{{projects[index]['title']}}</h2>
-            <div>
-                <p *ngFor="let skill of projects[index]['skills']">{{skill}}</p>
+
+        <div class="projectText" >
+            <div class="projectDescription" [ngClass]="index % 2 === 0 ? 'leftAnimate' : 'rightAnimate'">
+                <h2>{{projects[index]['title']}}</h2>
+                <div>
+                    <p *ngFor="let skill of projects[index]['skills']">{{skill}}</p>
+                </div>
+                <span>{{projects[index]['description']}}</span>
+                <a href="{{projects[index]['link']}}" target="_blank" class="creamColor">Github</a>
             </div>
-            <span>{{projects[index]['description']}}</span>
-            <a href="{{projects[index]['link']}}" target="_blank" class="creamColor">Github</a>
         </div>
 
     </div>
+
 </div>
+
+
+

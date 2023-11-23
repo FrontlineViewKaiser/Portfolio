@@ -1,12 +1,11 @@
-
-
 <div class="head" id="portfolio">
-   <h2>Portfolio</h2>
-<span>Feel free to check out my latest Code</span> 
+    <h2>Portfolio</h2>
+    <span>Feel free to check out my latest Code</span>
 </div>
 
-<app-project *ngFor="let project of projects; let i = index; " 
-[index]="i" [projects]="projects"></app-project>
-<div class="arrowLeft">
-    <img  src="/assets/img/Group 3.svg" alt="">
+<div class="projectList">
+    <app-project *ngFor="let project of projects; let i = index; " [index]="i" [projects]="projects"></app-project>
+    <div class="arrowLeft">
+        <img src="/assets/img/Group 3.svg" alt="">
+    </div>
 </div>

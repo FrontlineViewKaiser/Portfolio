@@ -2,6 +2,7 @@
 
 .project {
   width: calc(100% - $primary-padding * 2);
+  height: fit-content;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -77,47 +78,34 @@
       animation: color 125ms ease-in;
       filter: grayscale(0);
     }
-
   }
 }
 
-.projectPicture:hover ~ .projectText {
+.textside {
+  height: 100%;
+  width: 50%;
   display: flex;
-  transform: translateX(0);
-  
-}
-
-.projectText:hover {
-  display: flex;
-  transform: translateX(0);
-  
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 .projectText {
-  display: none;
-  justify-content: space-between;
-  flex-direction: column;
-  flex-grow: 1;
-  width: 35%;
-  align-self: stretch;
-  transform: translateX(100%); 
-  transition: transform 0.3s ease; 
-
-}
-
-.number {
-  font-size: 48px;
-  font-weight: 400;
-  font-family: Overpass;
+  width: 70%;
 }
 
 .projectDescription {
+  visibility: hidden;
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
   flex-direction: column;
   height: 100%;
   gap: 12px;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear; // Transition for smooth fade-in
+  position: relative;
+  left: -20px; // Start position for slide-in effect
 
   h2 {
     margin: 0;
@@ -163,24 +151,41 @@
   }
 }
 
+.projectPicture:hover + .textside .projectDescription,
+.projectDescription:hover {
+  visibility: visible; 
+  opacity: 1;
+  left: 0; 
+}
+
+.number {
+  font-size: 42px;
+  font-weight: 400;
+  font-family: Overpass;
+}
+
+.left {
+  align-items: flex-end;
+}
+
+.right {
+  align-items: flex-start;
+}
+
+.leftAnimation {
+  animation: slideInLeft 0.4s ease forwards;
+}
+
+.rightAnimation {
+  animation: slideInRight 0.4s ease forwards;
+}
+
 .row {
   flex-direction: row;
 }
 
 .row-reverse {
   flex-direction: row-reverse;
-}
-
-.left {
-  align-items: flex-end;
-  animation: slideInLeft 0.4s ease forwards;
-  padding-left: 10%;
-}
-
-.right {
-  align-items: flex-start;
-  animation: slideInRight 0.4s ease forwards;
-  padding-right: 10%;
 }
 
 @keyframes fade-in {
@@ -227,3 +232,43 @@
     transform: translateX(0); // Slide to original position
   }
 }
+
+// .numberRight {
+//   position: absolute;
+//   top: 4px;
+//   left: 97px;
+//   font-size: 42px;
+//   font-weight: 400;
+//   font-family: Overpass;
+// }
+
+// .projectPicture:hover + .projectText {
+//   display: flex;
+//   transform: translateX(0);
+// }
+
+// .projectText:hover {
+//   display: flex;
+//   transform: translateX(0);
+// }
+
+// .projectText {
+//   //visibility: hidden;
+//   justify-content: space-between;
+//   flex-direction: column;
+//   align-self: stretch;
+//   transform: translateX(100%);
+//   transition: transform 0.3s ease;
+// }
+
+// @media (max-width: 1240px) {
+// }
+
+// @media (max-width: 610px) {
+//   .project {
+//     width: calc(100% - $secondary-padding * 2);
+//   }
+// }
+
+// @media (max-width: 540px) {
+// }
