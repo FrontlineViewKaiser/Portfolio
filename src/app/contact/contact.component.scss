@@ -282,3 +282,57 @@ form {
     transform: translateY(0);
   }
 }
+
+
+@media (max-width: 930px) {
+  .sayHi {
+    a {
+      font-size: 64px;
+    }
+  }
+  
+}
+
+@media (max-width: 700px) {
+  .sayHi {
+    a {
+      font-size: 52px;
+    }
+  }
+}
+
+
+@media (max-width: 610px) {
+  .sayHi {
+    padding: 0 $secondary-padding;
+    width: calc(100% - $secondary-padding * 2);
+  }
+
+  .contactForm {
+    padding: 0 $secondary-padding;
+
+    width: calc(100% - $secondary-padding * 2);
+  }
+
+  .bottom {
+
+    width: calc(100% - $secondary-padding * 2);
+
+  }
+}
+
+@media (max-width: 700px) {
+  .sayHi {
+    a {
+      font-size: 48px;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .sayHi {
+    a {
+      font-size: 30px;
+    }
+  }
+}

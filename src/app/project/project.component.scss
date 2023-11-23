@@ -4,7 +4,7 @@
   width: calc(100% - $primary-padding * 2);
   height: fit-content;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   position: relative;
 }
@@ -62,22 +62,22 @@
     z-index: 2;
     rotate: -90deg;
   }
+}
 
-  &:hover {
-    .fadingIn {
-      display: block !important;
-      animation: fade-in 250ms ease-in;
-    }
+.animatePicture {
+  .fadingIn {
+    display: block !important;
+    animation: fade-in 250ms ease-in;
+  }
 
-    .arrowButtonLeft,
-    .arrowButtonRight {
-      animation: rotateArrow 550ms ease forwards;
-    }
+  .arrowButtonLeft,
+  .arrowButtonRight {
+    animation: rotateArrow 550ms ease forwards;
+  }
 
-    .thumbnail {
-      animation: color 125ms ease-in;
-      filter: grayscale(0);
-    }
+  .thumbnail {
+    animation: color 125ms ease-in;
+    filter: grayscale(0);
   }
 }
 
@@ -103,9 +103,8 @@
   height: 100%;
   gap: 12px;
   opacity: 0;
-  transition: visibility 0s, opacity 0.5s linear; // Transition for smooth fade-in
+  transition: visibility 0s, opacity 0.5s linear;
   position: relative;
-  left: -20px; // Start position for slide-in effect
 
   h2 {
     margin: 0;
@@ -151,17 +150,15 @@
   }
 }
 
-.projectPicture:hover + .textside .projectDescription,
-.projectDescription:hover {
-  visibility: visible; 
+.projectDescription.show {
+  visibility: visible;
   opacity: 1;
-  left: 0; 
 }
 
 .number {
   font-size: 42px;
   font-weight: 400;
-  font-family: Overpass;
+  font-family: Syne;
 }
 
 .left {
@@ -172,12 +169,12 @@
   align-items: flex-start;
 }
 
-.leftAnimation {
-  animation: slideInLeft 0.4s ease forwards;
+.leftPad {
+  padding-left: 30%;
 }
 
-.rightAnimation {
-  animation: slideInRight 0.4s ease forwards;
+.rightPad {
+  padding-right: 30%;
 }
 
 .row {
@@ -217,19 +214,97 @@
 
 @keyframes slideInLeft {
   from {
-    transform: translateX(-100%); // Start off-screen to the left
+    transform: translateX(-100%);
   }
   to {
-    transform: translateX(0); // Slide to original position
+    transform: translateX(0);
   }
 }
 
 @keyframes slideInRight {
   from {
-    transform: translateX(100%); // Start off-screen to the right
+    transform: translateX(100%);
   }
   to {
-    transform: translateX(0); // Slide to original position
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 940px) {
+  .project {
+    flex-direction: column !important;
+  }
+
+  .projectPicture {
+    width: 100%;
+  }
+
+  .textside {
+    width: 100%;
+  }
+
+  .projectText {
+    width: 100%;
+    padding: 0 !important;
+  }
+
+  .right {
+    align-items: flex-end;
+  }
+
+  .frameRight {
+    left: 1%;
+  }
+}
+
+@media (max-width: 610px) {
+  .project {
+    width: calc(100% - $secondary-padding * 2);
+  }
+
+  .projectPicture {
+    width: 98%;
+  }
+}
+
+@media (max-width: 540px) {
+  .arrowButtonLeft {
+    right: -20px !important;
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  
+  h2 {
+
+    font-size: 32px;
+  }
+
+  span {
+    font-size: 15px;
+
+  }
+}
+
+@media (max-width: 460px) {
+  .arrowButtonLeft {
+    right: -20px !important;
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  h2 {
+
+    font-size: 28px !important;
+  }
+
+}
+
+@media (max-width: 400px) {
+  .projectDescription {
+    div {
+      flex-wrap: wrap;
+    }
   }
 }
 
@@ -259,16 +334,4 @@
 //   align-self: stretch;
 //   transform: translateX(100%);
 //   transition: transform 0.3s ease;
-// }
-
-// @media (max-width: 1240px) {
-// }
-
-// @media (max-width: 610px) {
-//   .project {
-//     width: calc(100% - $secondary-padding * 2);
-//   }
-// }
-
-// @media (max-width: 540px) {
 // }
