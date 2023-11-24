@@ -107,7 +107,7 @@ form {
         color: #5988ff;
         text-decoration: none;
 
-        &hover {
+        &:hover {
           font-weight: 700;
         }
       }
@@ -177,6 +177,11 @@ form {
       width: 115px;
       position: absolute;
       left: -20px;
+
+      &:hover {
+        transform: scale(1.2);
+        transition: 250ms ease;
+      }
     }
   }
   .social {
@@ -195,15 +200,21 @@ form {
   justify-content: flex-start;
   gap: 24px;
 
-  span {
+  .email {
     color: white;
     font-size: 23px;
     font-weight: 300;
+    text-decoration: none;
   }
   .logo {
     img {
       height: 80px;
       width: 115px;
+
+      &:hover {
+        transform: scale(1.2);
+        transition: 250ms ease;
+      }
     }
   }
   .social {

@@ -12,7 +12,7 @@
                 <input class="inputs" type="text" placeholder="Your Name" formControlName="name">
                 <img *ngIf="contactForm.get('name').valid || contactForm.get('name').invalid && (contactForm.get('name').dirty || contactForm.get('name').touched) "
                     class="symbol"
-                    [src]="contactForm.get('name').valid ? '/assets/img/Frame (1).svg': '/assets/img/Vector (1).svg'">
+                    [src]="contactForm.get('name').valid ? 'assets/img/Frame (1).svg': 'assets/img/Vector (1).svg'">
             </div>
             <div *ngIf="contactForm.get('name').invalid && (contactForm.get('name').dirty || contactForm.get('name').touched)"
                 class="error">
@@ -23,7 +23,7 @@
                 <input class="inputs" type="text" placeholder="Your Email" name="email" formControlName="email">
                 <img *ngIf="contactForm.get('email').valid || contactForm.get('email').invalid && (contactForm.get('email').dirty || contactForm.get('email').touched) "
                     class="symbol"
-                    [src]="contactForm.get('email').valid ? '/assets/img/Frame (1).svg': '/assets/img/Vector (1).svg'">
+                    [src]="contactForm.get('email').valid ? 'assets/img/Frame (1).svg': 'assets/img/Vector (1).svg'">
             </div>
             <div *ngIf="contactForm.get('email').invalid && (contactForm.get('email').dirty || contactForm.get('email').touched)"
                 class="error">Please Fill out this field with a valid email adress</div>
@@ -33,8 +33,8 @@
                     formControlName="message"></textarea>
                 <img *ngIf="contactForm.get('message').valid || contactForm.get('message').invalid && (contactForm.get('message').dirty || contactForm.get('message').touched) "
                     class="symbol"
-                    [src]="contactForm.get('message').valid ? '/assets/img/Frame (1).svg': '/assets/img/Vector (1).svg'">
-                <img class="bars" src="/assets/img/Frame.svg" alt="">
+                    [src]="contactForm.get('message').valid ? 'assets/img/Frame (1).svg': 'assets/img/Vector (1).svg'">
+                <img class="bars" src="assets/img/Frame.svg" alt="">
 
             </div>
 
@@ -43,7 +43,7 @@
             <div class="privPolicy">
                 <div class="policyWrapper">
                     <img type="checkbox" (click)="togglePolicy()"
-                        [src]="contactForm.get('policy').value ? '/assets/img/78. Check button.svg' : '/assets/img/check_box_outline_blank.svg'"
+                        [src]="contactForm.get('policy').value ? 'assets/img/78. Check button.svg' : 'assets/img/check_box_outline_blank.svg'"
                         alt="">
                 </div>
 
@@ -66,34 +66,34 @@
         <div *ngIf="!this.menuService.MenuGlobal && currentRoute !== 'success' && currentRoute !== 'privacyPolicy' && currentRoute !== 'legal'"
             class="logo">
             <a class="logoContainer" href="/">
-                <img src="/assets/img/logoJK.svg" alt="">
+                <img src="assets/img/logoJK.svg" alt="">
             </a>
 
             <div class="signature">
-                <img src="/assets/img/copyright.svg" alt="">
+                <img src="assets/img/copyright.svg" alt="">
                 <p>Jonas Kratzenberg 2022</p>
             </div>
         </div>
         <div class="links">
             <a *ngIf="!this.menuService.MenuGlobal && currentRoute !== 'success' && currentRoute !== 'privacyPolicy' && currentRoute !== 'legal'"
                 (click)="scrollToTop()" class="up" href="/">
-                <img class="jumpAnimation" src="/assets/img/Group 7.svg" alt="">
+                <img class="jumpAnimation" src="assets/img/Group 7.svg" alt="">
             </a>
             <div class="social">
-                <a class="jumpAnimation" href="">
-                    <img src="/assets/img/Github button s3.svg" alt="">
+                <a class="jumpAnimation" href="https://github.com/FrontlineViewKaiser" target="_blank">
+                    <img src="assets/img/Github button s3.svg" alt="">
                 </a>
-                <a class="jumpAnimation" href="">
-                    <img src="/assets/img/Email button s3.svg" alt="">
+                <a class="jumpAnimation" href="mailto:jonas.kratzenberg@web.de">
+                    <img src="assets/img/Email button s3.svg" alt="">
                 </a>
-                <a class="jumpAnimation" href="">
-                    <img src="/assets/img/Linkedin button s3.svg" alt="">
+                <a class="jumpAnimation" href="https://www.linkedin.com/in/jonas-kratzenberg-951672258/" target="_blank">
+                    <img src="assets/img/Linkedin button s3.svg" alt="">
                 </a>
             </div>
             <a *ngIf="!this.menuService.MenuGlobal && currentRoute !== 'success' && currentRoute !== 'privacyPolicy' && currentRoute !== 'legal'"
                 class="legal" href="/legal">
                 Legal Notice
-                <img src="/assets/img/Vector 1.svg" alt="">
+                <img src="assets/img/Vector 1.svg" alt="">
             </a>
         </div>
     </div>
@@ -101,29 +101,29 @@
 
 <div class="bottomAlternative" *ngIf="screenwidth < 600">
     <div class="social">
-        <a class="jumpAnimation" href="">
-            <img src="/assets/img/Github button s3.svg" alt="">
+        <a class="jumpAnimation" href="https://github.com/FrontlineViewKaiser" target="_blank">
+            <img src="assets/img/Github button s3.svg" alt="">
         </a>
-        <a class="jumpAnimation" href="">
-            <img src="/assets/img/Email button s3.svg" alt="">
+        <a class="jumpAnimation" href="mailto:jonas.kratzenberg@web.de">
+            <img src="assets/img/Email button s3.svg" alt="">
         </a>
-        <a class="jumpAnimation" href="">
-            <img src="/assets/img/Linkedin button s3.svg" alt="">
+        <a class="jumpAnimation" href="https://www.linkedin.com/in/jonas-kratzenberg-951672258/" target="_blank">
+            <img src="assets/img/Linkedin button s3.svg" alt="">
         </a>
     </div>
 
     <div *ngIf="!this.menuService.MenuGlobal && currentRoute !== 'success' && currentRoute !== 'privacyPolicy' && currentRoute !== 'legal'"
         class="logo">
         <a class="logoContainer" href="/">
-            <img src="/assets/img/logoJK.svg" alt="">
+            <img src="assets/img/logoJK.svg" alt="">
         </a>
     </div>
-    
-    <span class="email">jonas.kratenberg@web.de</span>
+
+    <a class="email" href="mailto:jonas.kratzenberg@web.de">jonas.kratenberg@web.de</a>
 
     <a *ngIf="!this.menuService.MenuGlobal && currentRoute !== 'success' && currentRoute !== 'privacyPolicy' && currentRoute !== 'legal'"
         class="legal" href="/legal">
         Legal Notice
-        <img src="/assets/img/Vector 1.svg" alt="">
+        <img src="assets/img/Vector 1.svg" alt="">
     </a>
 </div>

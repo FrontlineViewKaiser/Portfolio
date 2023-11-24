@@ -9,7 +9,14 @@ import { MenuService } from '../menu.service';
 export class BurgerMenuComponent {
 
   constructor(public menuService: MenuService) {
+  }
 
+  goTo(id) {
+    this.menuService.MenuGlobal = !this.menuService.MenuGlobal
+    setTimeout(() => {
+       window.location.href = id
+    }, 1000);
+   
   }
 
 }

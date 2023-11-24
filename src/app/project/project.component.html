@@ -2,9 +2,9 @@
     <div class="projectPicture" (mouseenter)="mouseEnter()" (mouseleave)="mouseLeave($event)"
         [class.animatePicture]="isHoveringOverPicture">
         <img class="thumbnail" src="{{projects[index]['img']}}" alt="">
-        <div [ngClass]="index % 2 === 0 ? 'frameLeft' : 'frameRight'" class="fadingIn"></div>
+        <a href="{{projects[index]['link']}}" [ngClass]="index % 2 === 0 ? 'frameLeft' : 'frameRight'" class="fadingIn" target="_blank"></a>
         <img [ngClass]="(index % 2 === 0 || screenwidth < 940) ? 'arrowButtonLeft' : 'arrowButtonRight'"
-            class="fadingIn" src="/assets/img/Group 8.svg" alt="">
+            class="fadingIn" src="assets/img/Group 8.svg" alt="">
     </div>
     <div class="textside" [ngClass]="index % 2 === 0 ? 'left' : 'right'" (mouseleave)="mouseLeave($event)">
         <div class="number">
