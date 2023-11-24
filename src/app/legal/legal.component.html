@@ -1,6 +1,6 @@
-<app-atf></app-atf>
+<app-atf class="max-width"></app-atf>
 
-<div class="container" *ngIf="!this.menuService.MenuGlobal">
+<div class="container max-width" *ngIf="!this.menuService.MenuGlobal">
     <h1>Impressum</h1>
 
     <h2>Inhaltlich verantwortlich</h2>
@@ -26,6 +26,6 @@
     <p>Alle genutzen Bilder sind selbst-erstellt oder unter free license erhältlich</p>
 </div>
 
-<app-burger-menu *ngIf="this.menuService.MenuGlobal"></app-burger-menu>
+<app-burger-menu class="max-width" *ngIf="this.menuService.MenuGlobal"></app-burger-menu>
 
-<app-contact></app-contact>
+<app-contact class="max-width"></app-contact>

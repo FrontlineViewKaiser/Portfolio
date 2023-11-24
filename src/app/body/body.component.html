@@ -1,10 +1,10 @@
-<app-atf></app-atf>
-<app-head *ngIf="!this.menuService.MenuGlobal"></app-head>
-<app-about-me *ngIf="!this.menuService.MenuGlobal"></app-about-me>
-<app-skills *ngIf="!this.menuService.MenuGlobal"></app-skills>
-<app-portfolio *ngIf="!this.menuService.MenuGlobal" class="portfolio"></app-portfolio>
+<app-atf class="max-width"></app-atf>
+<app-head class="max-width" *ngIf="!this.menuService.MenuGlobal"></app-head>
+<app-about-me class="max-width" *ngIf="!this.menuService.MenuGlobal"></app-about-me>
+<app-skills class="max-width" *ngIf="!this.menuService.MenuGlobal"></app-skills>
+<app-portfolio class="max-width portfolio" *ngIf="!this.menuService.MenuGlobal"></app-portfolio>
 
-<app-burger-menu *ngIf="this.menuService.MenuGlobal"></app-burger-menu>
+<app-burger-menu class="max-width" *ngIf="this.menuService.MenuGlobal"></app-burger-menu>
 
 
-<app-contact></app-contact>
+<app-contact class="max-width"></app-contact>
