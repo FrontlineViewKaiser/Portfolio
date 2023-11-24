@@ -1,6 +1,12 @@
-import { Component, HostListener, Input } from '@angular/core';
-import { PortfolioComponent } from '../portfolio/portfolio.component';
-import { ProjectClass } from 'src/classes/project-class';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  Input,
+  ViewChild,
+} from '@angular/core';
+import { AnimationListenerService } from '../animation-listener.service';
+import { throttleTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-project',
@@ -8,21 +14,58 @@ import { ProjectClass } from 'src/classes/project-class';
   styleUrls: ['./project.component.scss'],
 })
 export class ProjectComponent {
+  @ViewChild('picture') picture: ElementRef;
   @Input() index: number;
   @Input() projects;
 
+  pictureOnScreen: boolean = false;
   isHoveringOverPicture = false;
   screenwidth: any;
 
-  constructor() {
-    this.screenwidth = window.innerWidth; // Set initial value
+  constructor(private animationListener: AnimationListenerService) {
+    this.screenwidth = window.innerWidth;
+  }
+
+  private getTotalOffset(element: HTMLElement): number {
+    let totalOffset = element.offsetTop;
+    let parent = element.offsetParent as HTMLElement;
+  
+    while (parent !== null) {
+      totalOffset += parent.offsetTop;
+      parent = parent.offsetParent as HTMLElement;
+    }
+  
+    return totalOffset;
+  }
+
+  ngAfterViewInit() {
+    this.animationListener.scrollObservable.pipe(
+      throttleTime(100)
+    ).subscribe((scrollPosition) => {
+      const pictureTop = this.getTotalOffset(this.picture.nativeElement);
+      const pictureHeight = this.picture.nativeElement.offsetHeight;
+      const viewportHeight = window.innerHeight;
+
+      if ((scrollPosition + (viewportHeight/1.5) >= pictureTop) && (scrollPosition <= pictureTop + pictureHeight)) {
+        this.pictureOnScreen = true;
+      } else this.pictureOnScreen = false;
+    });
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
-    this.screenwidth = window.innerWidth; // Update on window resize
+    this.screenwidth = window.innerWidth;
   }
 
+  isMobileDevice(): boolean {
+    const userAgent = window.navigator.userAgent;
+
+    // Regular expressions for mobile User Agents
+    const mobileRegex =
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+
+    return mobileRegex.test(userAgent);
+  }
 
   mouseEnter() {
     this.isHoveringOverPicture = true;
@@ -34,6 +77,12 @@ export class ProjectComponent {
     );
     if (!projectDescription) {
       this.isHoveringOverPicture = false;
+    }
+  }
+
+  ngOnDestroy() {
+    if (this.animationListener) {
+      this.animationListener.unsubscribe();
     }
   }
 }

@@ -1,8 +1,8 @@
 <div class="project globalPadding" [ngClass]="index % 2 === 0 ? 'row' : 'row-reverse'">
-    <div class="projectPicture" (mouseenter)="mouseEnter()" (mouseleave)="mouseLeave($event)"
-        [class.animatePicture]="isHoveringOverPicture">
+    <div #picture class="projectPicture" (mouseenter)="mouseEnter()" (mouseleave)="mouseLeave($event)"
+        [class.animatePicture]="isHoveringOverPicture || (isMobileDevice() && pictureOnScreen)">
         <img class="thumbnail" src="{{projects[index]['img']}}" alt="">
-        <a href="{{projects[index]['link']}}" [ngClass]="index % 2 === 0 ? 'frameLeft' : 'frameRight'" class="fadingIn" target="_blank"></a>
+        <a href="{{projects[index]['hostingLink']}}" [ngClass]="index % 2 === 0 ? 'frameLeft' : 'frameRight'" class="fadingIn" target="_blank"></a>
         <img [ngClass]="(index % 2 === 0 || screenwidth < 940) ? 'arrowButtonLeft' : 'arrowButtonRight'"
             class="fadingIn" src="assets/img/Group 8.svg" alt="">
     </div>
@@ -12,7 +12,7 @@
         </div>
 
         <div class="projectText" [ngClass]="index % 2 === 0 ? 'leftPad' : 'rightPad'">
-            <div class="projectDescription" [class.show]="isHoveringOverPicture">
+            <div  class="projectDescription" [class.show]="isHoveringOverPicture || (isMobileDevice() && pictureOnScreen)">
                 <h2>{{projects[index]['title']}}</h2>
                 <div>
                     <p *ngFor="let skill of projects[index]['skills']">{{skill}}</p>

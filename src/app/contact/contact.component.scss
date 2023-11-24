@@ -12,12 +12,12 @@
   position: relative;
   height: 200px;
   background-color: black;
-  //background: linear-gradient(to top right, black 50%, #fffcf3 50%);
   padding: 0 $primary-padding;
   width: calc(100% - $primary-padding * 2);
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
+  overflow: hidden;
 
   &::before {
     background-color: #fffcf3;
