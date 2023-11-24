@@ -49,16 +49,24 @@
 }
 
 .headlineLower {
-  margin-top: 80px;
-  width: 100%;
+  width: calc(100% - 29px);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-left: 29px;
+  overflow: hidden;
+  height: 362px
+}
+
+.joint {
+  width: 1px;
+  height: 1px;
 
   a {
+    display: inline-block;
     transform: rotate(-90deg);
     transform-origin: bottom left;
-    margin: 210px 0 0 55px;
+    margin: 150px 0 0 0px;
     font-weight: 300;
     font-size: 23px;
     font-family: Overpass;
@@ -69,10 +77,8 @@
 }
 
 .scrollDown {
-
   &:hover {
     img {
-     
       animation: arrow 1s infinite ease;
     }
   }
@@ -90,9 +96,9 @@
     font-weight: 300;
     font-size: 23px;
     max-width: 90px;
+    
   }
 }
-
 
 @keyframes arrow {
   20% {
@@ -118,7 +124,6 @@
   }
 
   .underscore {
-  
     img {
       width: 40%;
     }
@@ -126,7 +131,6 @@
       font-size: 40px;
     }
   }
-  
 }
 
 @media (max-width: 935px) {
@@ -135,7 +139,6 @@
   }
 
   .underscore {
-  
     img {
       width: 30%;
     }
@@ -151,7 +154,6 @@
   }
 
   .underscore {
-  
     img {
       width: 30%;
     }
@@ -163,21 +165,21 @@
 
 @media (max-width: 610px) {
   h1 {
-    font-size: 32px !important;
+    font-size: 36px !important;
   }
 
-    .introduction {
-    width: calc(100% - $secondary-padding * 2); 
+  .introduction {
+    width: calc(100% - $secondary-padding * 2);
   }
 
   .underscore {
     margin: 0;
-  img {
-    width: 35%;
-  }
-  p {
-    font-size: 20px;
-  }
+    img {
+      width: 35%;
+    }
+    p {
+      font-size: 20px;
+    }
   }
 }
 
@@ -188,11 +190,11 @@
 
   .underscore {
     margin: 0;
-  img {
-    width: 43%;
-  }
-  p {
-    font-size: 16px;
-  }
+    img {
+      width: 43%;
+    }
+    p {
+      font-size: 16px;
+    }
   }
 }
