@@ -87,7 +87,11 @@
   }
   
 
-
+  @media(min-width: 1920px) {
+    .burgerMenu {
+      padding: 0 $extreme-padding;
+    }
+  }
 
   
   @media (max-width: 952px) {

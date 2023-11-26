@@ -6,9 +6,6 @@ body {
     font-family: 'Syne';
 }
 
-.max-width {
-  max-width: 1020px;
-}
 
 .creamColor {
     background-color: #FFFCF3;
@@ -17,6 +14,13 @@ body {
 .globalPadding {
     padding: 0 $primary-padding;
 }
+
+@media(min-width: 1920px) {
+  .globalPadding {
+    padding: 0 $extreme-padding;
+}
+}
+
 
 @media (max-width: 610px) {
   .globalPadding {

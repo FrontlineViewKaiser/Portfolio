@@ -338,6 +338,22 @@ form {
   }
 }
 
+@media(min-width: 1920px) {
+  .sayHi {
+    padding: 0 $extreme-padding;
+    width: calc(100% - $extreme-padding * 2);
+  }
+
+  .contactForm {
+    padding: 0 $extreme-padding;
+    width: calc(100% - $extreme-padding * 2);
+  }
+
+  .bottom {
+    width: calc(100% - $extreme-padding * 2);
+  }
+}
+
 @media (max-width: 930px) {
   .sayHi {
     a {

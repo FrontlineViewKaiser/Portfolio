@@ -6,6 +6,13 @@ div {
   font-family: Overpass;
 }
 
+@media(min-width: 1920px) {
+  .head {
+    padding: 0 $extreme-padding;
+  }
+}
+
+
 @media (max-width: 610px) {
   div {
     padding: 0 $secondary-padding;

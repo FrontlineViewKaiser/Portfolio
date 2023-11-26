@@ -64,7 +64,7 @@ export class ContactComponent implements OnInit {
             'Accept': 'application/json'
         }
     }).then(() => {
-        window.location.href = "/success";
+      this.router.navigateByUrl('/success')
     }).catch((error) => {
         console.log(error);
     });

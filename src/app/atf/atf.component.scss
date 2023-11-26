@@ -95,6 +95,12 @@
   }
 }
 
+@media(min-width: 1920px) {
+  .header {
+    width: calc(100% - $extreme-padding * 2);
+  }
+}
+
 @media (max-width: 610px) {
   .header {
     width: calc(100% - $secondary-padding * 2);

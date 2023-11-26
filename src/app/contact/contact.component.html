@@ -47,7 +47,7 @@
                         alt="">
                 </div>
 
-                <p>I have read the <a href="/privacyPolicy">privacy policy</a> and agree to its terms</p>
+                <p>I have read the <a (click)="this.router.navigateByUrl('/privacyPolicy')">privacy policy</a> and agree to its terms</p>
 
             </div>
             <div *ngIf="!contactForm.get('policy').value && (contactForm.get('message').touched || contactForm.get('message').touched || contactForm.get('email').touched)"
@@ -91,7 +91,7 @@
                 </a>
             </div>
             <a *ngIf="!this.menuService.MenuGlobal && currentRoute !== 'success' && currentRoute !== 'privacyPolicy' && currentRoute !== 'legal'"
-                class="legal" href="/legal">
+                class="legal" (click)="this.router.navigateByUrl('/legal')">
                 Legal Notice
                 <img src="assets/img/Vector 1.svg" alt="">
             </a>
@@ -122,7 +122,7 @@
     <a class="email" href="mailto:jonas.kratzenberg@web.de">jonas.kratzenberg@web.de</a>
 
     <a *ngIf="!this.menuService.MenuGlobal && currentRoute !== 'success' && currentRoute !== 'privacyPolicy' && currentRoute !== 'legal'"
-        class="legal" href="/legal">
+        class="legal"  (click)="this.router.navigateByUrl('/legal')">
         Legal Notice
         <img src="assets/img/Vector 1.svg" alt="">
     </a>

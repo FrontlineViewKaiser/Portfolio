@@ -111,6 +111,12 @@
   }
 }
 
+@media(min-width: 1920px) {
+  .about {
+    width: calc(100% - $extreme-padding * 2);
+  }
+}
+
 @media (max-width: 830px) {
   h2 {
     font-size: 64px !important;

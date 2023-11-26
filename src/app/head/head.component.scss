@@ -118,6 +118,13 @@
   }
 }
 
+@media(min-width: 1920px) {
+  .introduction {
+    width: calc(100% - $extreme-padding * 2);
+  }
+}
+
+
 @media (max-width: 1270px) {
   h1 {
     font-size: 88px !important;

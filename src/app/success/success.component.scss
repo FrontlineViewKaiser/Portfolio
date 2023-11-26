@@ -28,3 +28,18 @@ div {
     }
   }
 }
+
+
+@media(min-width: 1920px) {
+  div {
+    width: calc(100% - $extreme-padding * 2);
+    padding: $extreme-padding;
+  }
+}
+
+@media (max-width: 610px) {
+  .div {
+    width: calc(100% - $secondary-padding * 2);
+    padding: $secondary-padding;
+  }
+}

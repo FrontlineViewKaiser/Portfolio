@@ -230,6 +230,13 @@
   }
 }
 
+@media(min-width: 1920px) {
+  .project {
+    width: calc(100% - $extreme-padding * 2);
+  }
+}
+
+
 @media (max-width: 940px) {
   .project {
     flex-direction: column !important;

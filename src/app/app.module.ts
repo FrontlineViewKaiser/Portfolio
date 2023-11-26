@@ -40,7 +40,7 @@ import { BurgerMenuComponent } from './burger-menu/burger-menu.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
