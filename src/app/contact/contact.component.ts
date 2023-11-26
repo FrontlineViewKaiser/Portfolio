@@ -64,7 +64,7 @@ export class ContactComponent implements OnInit {
             'Accept': 'application/json'
         }
     }).then(() => {
-      this.router.navigateByUrl('/success')
+      this.router.navigateByUrl('success')
     }).catch((error) => {
         console.log(error);
     });
@@ -81,38 +81,6 @@ export class ContactComponent implements OnInit {
   }
 }
 
-/*
-  policy: boolean = false;
-  errorName: boolean = false;
-  errorMail: boolean = false;
-  errorMessage: boolean = false;
-  errorPolicy: boolean = false;
-
-
-
-  checkInput(clickedElement) {
-    let name = this.name.nativeElement;
-    let email = this.email.nativeElement;
-    let message = this.message.nativeElement;
-
-    this.errorName = name.value == '' //&& clickedElement == 'name';
-
-    this.errorMail = email.value == '' //&& clickedElement == 'email';
-
-    this.errorMessage = message.value == '' //&& clickedElement == 'message';
-
-    this.errorPolicy = this.policy == false;
-
-     this.disabled = name.value == '' || email.value == ''|| message.value == '' || this.errorPolicy
-  }
-
-
-  resetError() {
-    this.errorPolicy = false
-    this.errorMessage = false
-    this.errorMail = false
-    this.errorName = false
-  }
 
 
 
@@ -127,5 +95,3 @@ export class ContactComponent implements OnInit {
 
 
 
-
-*/

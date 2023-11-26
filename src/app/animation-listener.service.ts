@@ -6,9 +6,7 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class AnimationListenerService {
-  unsubscribe() {
-    throw new Error('Method not implemented.');
-  }
+  [x: string]: any;
   private scrollSubject = new Subject<number>();
 
   constructor() {

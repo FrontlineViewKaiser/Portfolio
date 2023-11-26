@@ -3,6 +3,7 @@ import {
   ElementRef,
   HostListener,
   Input,
+  OnDestroy,
   ViewChild,
 } from '@angular/core';
 import { AnimationListenerService } from '../animation-listener.service';
@@ -13,11 +14,12 @@ import { throttleTime } from 'rxjs/operators';
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.scss'],
 })
-export class ProjectComponent {
+export class ProjectComponent implements OnDestroy {
   @ViewChild('picture') picture: ElementRef;
   @Input() index: number;
   @Input() projects;
 
+  scrollSubscription
   pictureOnScreen: boolean = false;
   isHoveringOverPicture = false;
   screenwidth: any;
@@ -29,27 +31,30 @@ export class ProjectComponent {
   private getTotalOffset(element: HTMLElement): number {
     let totalOffset = element.offsetTop;
     let parent = element.offsetParent as HTMLElement;
-  
+
     while (parent !== null) {
       totalOffset += parent.offsetTop;
       parent = parent.offsetParent as HTMLElement;
     }
-  
+
     return totalOffset;
   }
 
   ngAfterViewInit() {
-    this.animationListener.scrollObservable.pipe(
-      throttleTime(100)
-    ).subscribe((scrollPosition) => {
-      const pictureTop = this.getTotalOffset(this.picture.nativeElement);
-      const pictureHeight = this.picture.nativeElement.offsetHeight;
-      const viewportHeight = window.innerHeight;
+    this.scrollSubscription = this.animationListener.scrollObservable
+      .pipe(throttleTime(100))
+      .subscribe((scrollPosition) => {
+        const pictureTop = this.getTotalOffset(this.picture.nativeElement);
+        const pictureHeight = this.picture.nativeElement.offsetHeight;
+        const viewportHeight = window.innerHeight;
 
-      if ((scrollPosition + (viewportHeight/1.5) >= pictureTop) && (scrollPosition <= pictureTop + pictureHeight)) {
-        this.pictureOnScreen = true;
-      } else this.pictureOnScreen = false;
-    });
+        if (
+          scrollPosition + viewportHeight / 1.5 >= pictureTop &&
+          scrollPosition <= pictureTop + pictureHeight
+        ) {
+          this.pictureOnScreen = true;
+        } else this.pictureOnScreen = false;
+      });
   }
 
   @HostListener('window:resize', ['$event'])
@@ -81,8 +86,8 @@ export class ProjectComponent {
   }
 
   ngOnDestroy() {
-    if (this.animationListener) {
-      this.animationListener.unsubscribe();
+    if (this.scrollSubscription) {
+      this.scrollSubscription.unsubscribe();
     }
   }
 }
