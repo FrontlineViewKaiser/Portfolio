@@ -13,6 +13,9 @@ export class ATFComponent implements OnInit {
 
   ngOnInit() {}
 
+  /**
+   * toggles the global variable that controls Burger menu display state
+   */
   toggleDisplayMenu() {
     this.menuService.MenuGlobal = !this.menuService.MenuGlobal
   }

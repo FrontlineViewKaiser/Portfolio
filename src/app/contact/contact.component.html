@@ -1,6 +1,6 @@
 <div class="contact" id="contact">
     <div class="sayHi">
-        <a href="#contact" (click)="this.menuService.MenuGlobal = false">Say Hi!</a>
+        <a (click)="goTo('#contact')" >Say Hi!</a>
     </div>
     <div *ngIf="!this.menuService.MenuGlobal && currentRoute !== 'success' && currentRoute !== 'privacyPolicy' && currentRoute !== 'legal'"
         class="contactForm">

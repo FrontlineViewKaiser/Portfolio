@@ -17,6 +17,9 @@ export class AnimationListenerService {
     return this.scrollSubject.asObservable();
   }
 
+  /**
+   * sets scroll position, determined by distance to top of the page
+   */
   private onWindowScroll(): void {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     this.scrollSubject.next(scrollPosition);

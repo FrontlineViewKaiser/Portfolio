@@ -22,7 +22,7 @@ export class PortfolioComponent {
       ['JS |', 'CSS |', 'HTML |', 'API'],
       'assets/img/pkdx.PNG',
       'https://github.com/FrontlineViewKaiser/PokeDex',
-      'http://jonas-kratzenberg.developerakademie.net/Dev/API%20Excercises/Pokedex/index.html'
+      'http://jonas-kratzenberg.developerakademie.net/PokeDex/index.html'
     ),
     new ProjectClass(
       'Sharkie',

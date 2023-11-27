@@ -16,6 +16,11 @@ export class ContactComponent implements OnInit {
 
   screenwidth: any;
 
+
+  /**
+   * listens to a screenchange and then sets the current screenwidth
+   * @param event 
+   */
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
     this.screenwidth = window.innerWidth; // Update on window resize
@@ -34,6 +39,9 @@ export class ContactComponent implements OnInit {
   policy: boolean = false;
 
 
+  /**
+   * sets current route and FormGroup for email form
+   */
   ngOnInit(): void {
     this.currentRoute = this.route.snapshot.url.join('/')
     this.contactForm = new FormGroup({
@@ -44,11 +52,17 @@ export class ContactComponent implements OnInit {
     });
   }
 
+  /**
+   * toggles the privacy policy in lieu of a checkbox, which would have been more convenient, yet significantly harder to design
+   */
   togglePolicy() {
     let currentValue = this.contactForm.get('policy').value
     this.contactForm.get('policy').setValue(!currentValue)
   }
 
+  /**
+   * Formspree function adjusted to redirect to success page and append three values to be sent
+   */
   async sendMail() {
     console.log('email sent')
 
@@ -69,15 +83,29 @@ export class ContactComponent implements OnInit {
         console.log(error);
     });
 
-    //jonas-kratzenberg.developerakademie.net/send_mail/send_mail.php
   }
 
+  /**
+   * smooth scrolling back to top
+   */
   scrollToTop() {
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: 'smooth',
     });
+  }
+
+    /**
+   * toggles the burger menu to display the basic page, timeout set to allow for loading, then simply href's to the desired location
+   * @param id id of an HTML Element
+   */
+  goTo(id) {
+    this.menuService.MenuGlobal = false
+    setTimeout(() => {
+       window.location.href = id
+    }, 1000);
+   
   }
 }
 

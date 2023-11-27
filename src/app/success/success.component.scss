@@ -1,6 +1,7 @@
 @import "src/assets/_variables.scss";
 
 div {
+  height: 90vh;
   width: calc(100% - $primary-padding * 2);
   padding: $primary-padding;
   display: flex;
