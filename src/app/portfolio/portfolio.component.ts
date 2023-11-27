@@ -13,7 +13,7 @@ export class PortfolioComponent {
       'Kanban-inspired task-management system hooked up to a fully functioning backend. Create, assign and edit tasks. With dynamic contacts and drag-drop function on computer and mobile',
       ['JS |', 'CSS |', 'HTML |', 'API |', 'SCRUM'],
       'assets/img/join.PNG',
-      'https://github.com/FrontlineViewKaiser/ringoffire',
+      'https://github.com/FrontlineViewKaiser/Kanban-Board',
       'http://jonas-kratzenberg.developerakademie.net/Join/index.html'
     ),
     new ProjectClass(
