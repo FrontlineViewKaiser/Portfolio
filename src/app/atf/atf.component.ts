@@ -18,5 +18,12 @@ export class ATFComponent implements OnInit {
    */
   toggleDisplayMenu() {
     this.menuService.MenuGlobal = !this.menuService.MenuGlobal
+    if(this.menuService.MenuGlobal) {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth',
+      });
+    }
   }
 }

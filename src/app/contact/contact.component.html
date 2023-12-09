@@ -1,6 +1,6 @@
 <div class="contact" id="contact">
     <div class="sayHi">
-        <a (click)="goTo('#contact')" >Say Hi!</a>
+        <a (click)="goTo('contact')" >Say Hi!</a>
     </div>
     <div *ngIf="!this.menuService.MenuGlobal && currentRoute !== 'success' && currentRoute !== 'privacyPolicy' && currentRoute !== 'legal'"
         class="contactForm">
@@ -76,7 +76,7 @@
         </div>
         <div class="links">
             <a *ngIf="!this.menuService.MenuGlobal && currentRoute !== 'success' && currentRoute !== 'privacyPolicy' && currentRoute !== 'legal'"
-                (click)="scrollToTop()" class="up" href="/">
+                (click)="scrollToTop()" class="up">
                 <img class="jumpAnimation" src="assets/img/Group 7.svg" alt="">
             </a>
             <div class="social">
@@ -114,7 +114,7 @@
 
     <div *ngIf="!this.menuService.MenuGlobal && currentRoute !== 'success' && currentRoute !== 'privacyPolicy' && currentRoute !== 'legal'"
         class="logo">
-        <a class="logoContainer" routerLink="">
+        <a (click)="scrollToTop()" class="logoContainer" routerLink="/">
             <img src="assets/img/logoJK.svg" alt="">
         </a>
     </div>
