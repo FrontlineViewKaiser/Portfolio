@@ -110,6 +110,7 @@ export class ContactComponent implements OnInit {
    * @param id id of an HTML Element
    */
   goTo(selector) {
+
     this.menuService.MenuGlobal = false;
     this.waitForElementToDisplay(selector, 50)
 
