@@ -32,6 +32,14 @@ export class PortfolioComponent {
       'https://github.com/FrontlineViewKaiser/Sharkie-Videogame-with-JS',
       'http://jonas-kratzenberg.developerakademie.net/Sharkie/index.html'
     ),
+    new ProjectClass(
+      'To Kyiv with Love',
+      'An Angular app that matches drivers and humanitarian workers to help people find a way to bring supplies to Ukraine. Built with a FireBase backend and authentification',
+      ['TS |', 'SCSS |', 'HTML |', 'Git |', 'Angular |', 'FireBase'],
+      'assets/img/kiyvScreen.PNG',
+      'https://github.com/FrontlineViewKaiser/transport-app',
+      'https://jonas-kratzenberg.developerakademie.net/angular-projects/transport-app/'
+    ),
   ];
 
   constructor() {}
