@@ -13,7 +13,7 @@ export class PortfolioComponent {
       'Kanban-inspired task-management system hooked up to a fully functioning backend. Create, assign and edit tasks. With dynamic contacts and drag-drop function on computer and mobile',
       ['JS |', 'CSS |', 'HTML |', 'API |', 'SCRUM'],
       'assets/img/join.PNG',
-      'https://github.com/FrontlineViewKaiser/Kanban-Board',
+      'https://github.com/FrontlineViewKaiser/Join',
       'http://jonas-kratzenberg.developerakademie.net/Join/index.html'
     ),
     new ProjectClass(
@@ -29,7 +29,7 @@ export class PortfolioComponent {
       'A Videogame done entirely through JavaScript, comes with music, touch-controls and of course a final Boss-Fight',
       ['JS |', 'CSS |', 'HTML |', 'Git'],
       'assets/img/sharkie.png',
-      'https://github.com/FrontlineViewKaiser/Sharkie-Videogame-with-JS',
+      'https://github.com/FrontlineViewKaiser/Sharkie',
       'http://jonas-kratzenberg.developerakademie.net/Sharkie/index.html'
     ),
     new ProjectClass(
