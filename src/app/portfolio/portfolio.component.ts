@@ -14,7 +14,7 @@ export class PortfolioComponent {
       ['JS |', 'CSS |', 'HTML |', 'API |', 'SCRUM'],
       'assets/img/join.PNG',
       'https://github.com/FrontlineViewKaiser/Join',
-      'http://jonas-kratzenberg.developerakademie.net/Join/index.html'
+      'http://kratzenberg-development.tech/projects/Join/index.html'
     ),
     new ProjectClass(
       'Pokedex',
@@ -22,7 +22,7 @@ export class PortfolioComponent {
       ['JS |', 'CSS |', 'HTML |', 'API'],
       'assets/img/pkdx.PNG',
       'https://github.com/FrontlineViewKaiser/PokeDex',
-      'http://jonas-kratzenberg.developerakademie.net/PokeDex/index.html'
+      'http://kratzenberg-development.tech/projects/PokeDex/index.html'
     ),
     new ProjectClass(
       'Sharkie',
@@ -30,7 +30,7 @@ export class PortfolioComponent {
       ['JS |', 'CSS |', 'HTML |', 'Git'],
       'assets/img/sharkie.png',
       'https://github.com/FrontlineViewKaiser/Sharkie',
-      'http://jonas-kratzenberg.developerakademie.net/Sharkie/index.html'
+      'http://kratzenberg-development.tech/projects/Sharkie/index.html'
     ),
     new ProjectClass(
       'To Kyiv with Love',
@@ -38,7 +38,7 @@ export class PortfolioComponent {
       ['TS |', 'SCSS |', 'HTML |', 'Git |', 'Angular |', 'FireBase'],
       'assets/img/kiyvScreen.PNG',
       'https://github.com/FrontlineViewKaiser/transport-app',
-      'https://jonas-kratzenberg.developerakademie.net/angular-projects/transport-app/'
+      'http://kratzenberg-development.tech/projects/transport-app/'
     ),
   ];
 
